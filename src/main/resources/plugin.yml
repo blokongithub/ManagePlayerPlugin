@@ -5,3 +5,8 @@ api-version: '1.20'
 commands:
   manage:
     description: "manages a player"
+    permission: manageplayer.manage
+permissions:
+  manageplayer.manage:
+    default: op
+    description: "Allows players to use the command of /manage"
