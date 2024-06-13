@@ -1,7 +1,6 @@
-package blokplugins.manageplayer.Listners;
+package blokplugins.manageplayer.listners;
 
-import blokplugins.manageplayer.Holders.manageHolder;
-import blokplugins.manageplayer.Menus.manageMenu;
+import blokplugins.manageplayer.holders.ManageHolder;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -10,10 +9,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-public class manageListner implements Listener {
+public class ManageListner implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        if (e.getInventory().getHolder() instanceof manageHolder) {
+        if (e.getInventory().getHolder() instanceof ManageHolder) {
             Player player = (Player) e.getWhoClicked();
             Player target = Bukkit.getPlayer(e.getView().getItem(0).getItemMeta().getDisplayName());
 

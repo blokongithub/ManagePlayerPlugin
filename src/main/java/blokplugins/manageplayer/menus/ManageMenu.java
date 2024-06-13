@@ -1,6 +1,6 @@
-package blokplugins.manageplayer.Menus;
+package blokplugins.manageplayer.menus;
 
-import blokplugins.manageplayer.Holders.manageHolder;
+import blokplugins.manageplayer.holders.ManageHolder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -9,19 +9,21 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class manageMenu {
+public class ManageMenu {
     public Inventory inv;
-    public manageMenu(Player player, Player target) {
-        inv = Bukkit.createInventory(new manageHolder(), 27, "Manage " + target.getDisplayName());
+
+    public ManageMenu(Player player, Player target) {
+        inv = Bukkit.createInventory(new ManageHolder(), 27, "Manage " + target.getDisplayName());
         initializeItems(target);
         player.openInventory(inv);
     }
+
     public void initializeItems(Player target) {
         ItemStack empty = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         ItemMeta emptymeta = empty.getItemMeta();
         emptymeta.setDisplayName(" ");
         empty.setItemMeta(emptymeta);
-        for(int i=0; i < 27; i++) {
+        for (int i = 0; i < 27; i++) {
             inv.setItem(i, empty);
         }
         ItemStack clear = new ItemStack(Material.REDSTONE_BLOCK);
