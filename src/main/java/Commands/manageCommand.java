@@ -18,7 +18,6 @@ public class manageCommand implements CommandExecutor {
                     player.sendMessage("Target doesn't exist");
                     return true;
                 } else {
-                    player.sendMessage(target.getDisplayName());
                     new manageMenu(player, target);
                 }
 
