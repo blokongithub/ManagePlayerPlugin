@@ -1,0 +1,4 @@
+name: manageplayer
+version: '${project.version}'
+main: blokplugins.manageplayer.Manageplayer
+api-version: '1.20'
